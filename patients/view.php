@@ -20,6 +20,7 @@ $result = mysqli_query($con, "SELECT * FROM patients");
             <td>Gender</td>
             <td>Phone</td>
             <td>Disease</td>
+            <td>Action</td>
         </tr>
 
         <?php while ($row = mysqli_fetch_assoc($result)) { ?>
@@ -30,6 +31,10 @@ $result = mysqli_query($con, "SELECT * FROM patients");
                 <td><?php echo $row['gender']; ?></td>
                 <td><?php echo $row['phone']; ?></td>
                 <td><?php echo $row['disease']; ?></td>
+                <td>
+                    <a href="edit.php?id=<?php echo $row['patient_id']; ?>">Edit</a>
+                    <a href="delete.php?id=<?php echo $row['patient_id'] ?>" onclick = "return confirm('Are you sure?');">Delete</a>
+                </td>
             </tr>
         <?php } ?>
     </table>
