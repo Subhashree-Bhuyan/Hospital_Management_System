@@ -33,7 +33,7 @@ $result = mysqli_query($con, "SELECT * FROM patients");
                 <td><?php echo $row['disease']; ?></td>
                 <td>
                     <a href="edit.php?id=<?php echo $row['patient_id']; ?>">Edit</a>
-                    <a href="delete.php?id=<?php echo $row['patient_id'] ?>" onclick = "return confirm('Are you sure?');">Delete</a>
+                    <a href="delete.php?id=<?php echo $row['patient_id'] ?>" onclick = "return confirm('Are you sure you want to delete <?php echo $row['name'] ?> record?');">Delete</a>
                 </td>
             </tr>
         <?php } ?>

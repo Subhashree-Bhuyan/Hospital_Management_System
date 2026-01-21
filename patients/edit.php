@@ -44,7 +44,7 @@ if(isset($_POST['update'])){
         <input type="text" name="disease" value="<?php echo $data['disease']; ?>" required><br><br>
 
 
-        <button name="update">Add Patient</button>
+        <button name="update">Update Patient</button>
     </form>
 </body>
 </html>
