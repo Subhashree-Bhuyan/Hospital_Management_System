@@ -11,6 +11,7 @@ if(!isset($_SESSION['admin'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <h1>Welcome, Admin</h1>
@@ -28,10 +29,11 @@ if(!isset($_SESSION['admin'])){
         <li><a href="doctors/view.php">View Doctors</a></li>
         <li><a href="appointments/add.php">Book Appointment</a></li>
         <li><a href="appointments/view.php">View Appointments</a></li>
+        <li><a href="appointments/report.php">Appointment Report</a></li>
 
     </ul>
 
 
-    <a href="logout.php">Logout</a>
+    <a class="logout" href="logout.php">Logout</a>
 </body>
 </html>

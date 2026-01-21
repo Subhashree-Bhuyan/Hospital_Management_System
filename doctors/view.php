@@ -9,6 +9,7 @@ $result = mysqli_query($con, "SELECT * FROM doctors");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <h2>Doctor List</h2>
@@ -37,5 +38,8 @@ $result = mysqli_query($con, "SELECT * FROM doctors");
             <?php } ?>
         </table>
     </form>
+
+    <a href="add.php" class="btn">Add New Doctor</a>
+    <a href="../dashboard.php" class="btn">Back</a>
 </body>
 </html>

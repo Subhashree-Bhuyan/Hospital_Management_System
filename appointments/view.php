@@ -18,6 +18,7 @@ $q = "SELECT appointments.id,
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <h2>Appointments</h2>
@@ -37,5 +38,7 @@ $q = "SELECT appointments.id,
         </tr>
 <?php } ?>
     </table>
+    <br><br>
+    <a href="../dashboard.php" class="btn">Back</a>
 </body>
 </html>

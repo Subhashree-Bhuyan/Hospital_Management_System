@@ -25,6 +25,7 @@ if(isset($_POST['save'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <h2>Book Appointment</h2>
@@ -48,5 +49,7 @@ if(isset($_POST['save'])){
 
         <button type="submit" name="save">Book</button>
         </form>
+
+    <a href="../dashboard.php" class="btn">Back</a>
 </body>
 </html>

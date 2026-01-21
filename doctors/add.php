@@ -18,6 +18,7 @@ if(isset($_POST['add'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <h2>Add Doctor</h2>
@@ -31,6 +32,7 @@ if(isset($_POST['add'])){
     </form>
 
     <br>
-    <a href="view.php">View Doctors</a>
+    <a href="view.php" class="btn">View Doctors</a>
+    <a href="../dashboard.php" class="btn">Back</a>
 </body>
 </html>
