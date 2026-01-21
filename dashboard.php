@@ -15,11 +15,23 @@ if(!isset($_SESSION['admin'])){
 <body>
     <h1>Welcome, Admin</h1>
 
-    <ul>
+    <!-- <ul>
         <li>Patient Management</li>
         <li>Doctor Management</li>
         <li>Appointment Management</li>
+    </ul> -->
+
+    <ul>
+        <li><a href="patients/add.php">Add Patient</a></li>
+        <li><a href="patients/view.php">View Patients</a></li>
+        <li><a href="doctors/add.php">Add Doctor</a></li>
+        <li><a href="doctors/view.php">View Doctors</a></li>
+        <li><a href="appointments/add.php">Book Appointment</a></li>
+        <li><a href="appointments/view.php">View Appointments</a></li>
+
     </ul>
+
+
     <a href="logout.php">Logout</a>
 </body>
 </html>
