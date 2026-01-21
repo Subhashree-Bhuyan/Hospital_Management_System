@@ -14,13 +14,13 @@ $result = mysqli_query($con, "SELECT * FROM patients");
     <h2>Patient List</h2>
     <table border='1' cellpadding='10'>
         <tr>
-            <td>ID</td>
-            <td>Name</td>
-            <td>Age</td>
-            <td>Gender</td>
-            <td>Phone</td>
-            <td>Disease</td>
-            <td>Action</td>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Phone</th>
+            <th>Disease</th>
+            <th>Action</th>
         </tr>
 
         <?php while ($row = mysqli_fetch_assoc($result)) { ?>
