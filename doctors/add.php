@@ -21,18 +21,21 @@ if(isset($_POST['add'])){
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <h2>Add Doctor</h2>
+    <div class="page">
+        <h2>Add Doctor</h2>
 
-    <form method="post">
-        <input type="text" name="name" placeholder="Doctor name" required> <br><br>
-        <input type="text" name="department" placeholder="Department" required> <br><br>
-        <input type="text" name="available_days" placeholder="Available Days" required> <br><br>
+        <form method="post">
+            <input type="text" name="name" placeholder="Doctor name" required>
+            <input type="text" name="department" placeholder="Department" required>
+            <input type="text" name="available_days" placeholder="Available Days" required>
 
-        <button name="add">Add Doctor</button>
-    </form>
+            <button name="add">Add Doctor</button>
+        </form>
 
-    <br>
-    <a href="view.php" class="btn">View Doctors</a>
-    <a href="../dashboard.php" class="btn">Back</a>
+        <div class="btns">
+            <a href="view.php" class="other_btn">View Doctors</a>
+            <a href="../dashboard.php" class="back">Back</a>
+        </div>
+    </div>
 </body>
 </html>

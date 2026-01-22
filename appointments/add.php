@@ -28,28 +28,30 @@ if(isset($_POST['save'])){
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <h2>Book Appointment</h2>
+    <div class="page">
+        <h2>Book Appointment</h2>
 
-    <form method='post'>
-        <select name="patient_id" required>
-            <option value="" disabled selected>Select Patient</option>
-            <?php while($p = mysqli_fetch_assoc($patients)){ ?>
-                <option value="<?= $p['patient_id']?>"><?= $p['name'] ?></option>
+        <form method='post'>
+            <select name="patient_id" required>
+                <option value="" disabled selected>Select Patient</option>
+                <?php while($p = mysqli_fetch_assoc($patients)){ ?>
+                    <option value="<?= $p['patient_id']?>"><?= $p['name'] ?></option>
+                <?php } ?>
+            </select>
+
+            <select name="doctor_id" required>
+            <option value="" disabled selected>Select Doctor</option>
+            <?php while($d = mysqli_fetch_assoc($doctors)) { ?>
+                <option value="<?= $d['doctor_id'] ?>"><?= $d['name'] ?></option>
             <?php } ?>
-        </select> <br><br>
+            </select><br><br>
 
-        <select name="doctor_id" required>
-        <option value="" disabled selected>Select Doctor</option>
-        <?php while($d = mysqli_fetch_assoc($doctors)) { ?>
-            <option value="<?= $d['doctor_id'] ?>"><?= $d['name'] ?></option>
-        <?php } ?>
-        </select><br><br>
+            <input type="date" name="date" required>
 
-        <input type="date" name="date" required><br><br>
-
-        <button type="submit" name="save">Book</button>
+            <button type="submit" name="save">Book</button>
         </form>
 
-    <a href="../dashboard.php" class="btn">Back</a>
+        <a href="../dashboard.php" class="back">Back</a>
+    </div>
 </body>
 </html>

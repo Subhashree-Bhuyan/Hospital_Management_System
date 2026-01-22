@@ -25,21 +25,24 @@ if(isset($_POST['add'])){
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <h2>Add Patient</h2>
+    <div class="page">
+        <h2>Add Patient</h2>
 
-    <form method = "post">
-        <input type="text" name="name" placeholder="Patient Name" required><br><br>
-        <input type="number" name="age" placeholder="Age" required><br><br>
-        <input type="text" name="gender" placeholder="Gender" required><br><br>
-        <input type="tel" name="phone" placeholder="Phone" required><br><br>
-        <input type="text" name="disease" placeholder="Disease" required><br><br>
+        <form method = "post">
+            <input type="text" name="name" placeholder="Patient Name" required>
+            <input type="number" name="age" placeholder="Age" required>
+            <input type="text" name="gender" placeholder="Gender" required>
+            <input type="tel" name="phone" placeholder="Phone" required>
+            <input type="text" name="disease" placeholder="Disease" required>
 
-        <button name="add">Add Patient</button>
-    </form>
+            <button name="add">Add Patient</button>
+        </form>
 
-    <br>
-    <a href="view.php" class="btn">View Patients</a>
-    <a href="../dashboard.php" class="btn">Back</a>
+        <div class="btns">
+            <a href="view.php" class="other_btn">View Patients</a>
+            <a href="../dashboard.php" class="back">Back</a>
+        </div>
+    </div>
 </body>
 </html>
 

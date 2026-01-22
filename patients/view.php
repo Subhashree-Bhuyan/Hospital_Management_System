@@ -1,6 +1,15 @@
 <?php
 include("../config/db.php");
-$result = mysqli_query($con, "SELECT * FROM patients");
+// $result = mysqli_query($con, "SELECT * FROM patients");
+
+$search = "";
+if(isset($_GET['search']) && $_GET['search'] != ""){
+    $search = $_GET['search'];
+    $q = "SELECT * FROM  patients WHERE name LIKE '%$search%'";
+}else {
+    $q = "SELECT * FROM patients";
+}
+$result = mysqli_query($con, $q);
 ?>
 
 <!DOCTYPE html>
@@ -12,8 +21,20 @@ $result = mysqli_query($con, "SELECT * FROM patients");
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+    <div class="page">
     <h2>Patient List</h2>
-    <table border='1' cellpadding='10'>
+
+    <form class="search_box" method="get" >
+        <input type="text" name="search" placeholder="Search patient by name">
+        <button type="submit">Search</button>
+    </form>
+
+
+    <div class="btns">
+        <a href="add.php" class="other_btn">Add New Patient</a>
+        <a href="../dashboard.php" class="back">Back</a>
+    </div>
+    <table border='5' cellpadding='10'>
         <tr>
             <th>ID</th>
             <th>Name</th>
@@ -33,16 +54,14 @@ $result = mysqli_query($con, "SELECT * FROM patients");
                 <td><?php echo $row['phone']; ?></td>
                 <td><?php echo $row['disease']; ?></td>
                 <td>
-                    <a href="edit.php?id=<?php echo $row['patient_id']; ?>">Edit</a>
-                    <a href="delete.php?id=<?php echo $row['patient_id'] ?>" onclick = "return confirm('Are you sure you want to delete <?php echo $row['name'] ?> record?');">Delete</a>
+                    <a class="edit" href="edit.php?id=<?php echo $row['patient_id']; ?>">Edit</a>
+                    <a class="delete" href="delete.php?id=<?php echo $row['patient_id'] ?>" onclick = "return confirm('Are you sure you want to delete <?php echo $row['name'] ?> record?');">Delete</a>
                 </td>
             </tr>
         <?php } ?>
     </table>
-
-    <br>
-    <a href="add.php" class="btn">Add New Patient</a>
-    <a href="../dashboard.php" class="btn">Back</a>
+    
+    </div>
 </body>
 </html>
 

@@ -21,24 +21,25 @@ $q = "SELECT appointments.id,
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <h2>Appointments</h2>
+    <div class="page">
+        <h2>Appointments</h2>
 
-    <table border="1">
-        <tr>
-            <th>Patient</th>
-            <th>Doctor</th>
-            <th>Date</th>
-        </tr>
+        <table border="5" cellpadding="10">
+            <tr>
+                <th>Patient</th>
+                <th>Doctor</th>
+                <th>Date</th>
+            </tr>
 
-        <?php while($row = mysqli_fetch_assoc($res)) { ?>
-        <tr>
-            <td><?= $row['patient_name'] ?></td>
-            <td><?= $row['doctor_name'] ?></td>
-            <td><?= $row['appointment_date'] ?></td>
-        </tr>
-<?php } ?>
-    </table>
-    <br><br>
-    <a href="../dashboard.php" class="btn">Back</a>
+            <?php while($row = mysqli_fetch_assoc($res)) { ?>
+            <tr>
+                <td><?= $row['patient_name'] ?></td>
+                <td><?= $row['doctor_name'] ?></td>
+                <td><?= $row['appointment_date'] ?></td>
+            </tr>
+            <?php } ?>
+        </table>
+        <a href="../dashboard.php" class="back">Back</a>
+    </div>
 </body>
 </html>

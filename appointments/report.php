@@ -22,25 +22,26 @@ ORDER BY appointments.appointment_date
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <h2>Appointment Report</h2>
+    <div class="page">
+        <h2>Appointment Report</h2>
 
-    <table border="1">
-        <tr>
-            <th>Patient</th>
-            <th>Doctor</th>
-            <th>Date</th>
-        </tr>
+        <table border="5">
+            <tr>
+                <th>Patient</th>
+                <th>Doctor</th>
+                <th>Date</th>
+            </tr>
 
-        <?php while($r = mysqli_fetch_assoc($res)) { ?>
-        <tr>
-            <td><?= $r['patient'] ?></td>
-            <td><?= $r['doctor'] ?></td>
-            <td><?= $r['appointment_date'] ?></td>
-        </tr>
-        <?php } ?>
-    </table>
-
-    <br><br>
-    <a href="../dashboard.php" class="btn">Back</a>
+            <?php while($r = mysqli_fetch_assoc($res)) { ?>
+            <tr>
+                <td><?= $r['patient'] ?></td>
+                <td><?= $r['doctor'] ?></td>
+                <td><?= $r['appointment_date'] ?></td>
+            </tr>
+            <?php } ?>
+        </table>
+        
+        <a href="../dashboard.php" class="back">Back</a>
+    </div>
 </body>
 </html>

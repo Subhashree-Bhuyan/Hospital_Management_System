@@ -3,6 +3,21 @@ session_start();
 if(!isset($_SESSION['admin'])){
     header("Location: index.php");
 }
+
+// count card
+include("config/db.php");
+
+$patient_count = mysqli_fetch_assoc(
+    mysqli_query($con, "SELECT COUNT(*) AS total FROM patients")
+)['total'];
+
+$doctor_count = mysqli_fetch_assoc(
+    mysqli_query($con, "SELECT COUNT(*) AS total FROM doctors")
+)['total'];
+
+$appointment_count = mysqli_fetch_assoc(
+    mysqli_query($con, "SELECT COUNT(*) AS total FROM appointments")
+)['total'];
 ?>
 
 <!DOCTYPE html>
@@ -14,26 +29,44 @@ if(!isset($_SESSION['admin'])){
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Welcome, Admin</h1>
-
-    <!-- <ul>
-        <li>Patient Management</li>
-        <li>Doctor Management</li>
-        <li>Appointment Management</li>
-    </ul> -->
-
-    <ul>
-        <li><a href="patients/add.php">Add Patient</a></li>
-        <li><a href="patients/view.php">View Patients</a></li>
-        <li><a href="doctors/add.php">Add Doctor</a></li>
-        <li><a href="doctors/view.php">View Doctors</a></li>
-        <li><a href="appointments/add.php">Book Appointment</a></li>
-        <li><a href="appointments/view.php">View Appointments</a></li>
-        <li><a href="appointments/report.php">Appointment Report</a></li>
-
-    </ul>
+    <nav>
+        <!-- <span>Admin</span> -->
+        <a class="logout" href="logout.php">Logout</a>
+    </nav>
+    <div class="main-container">
+        <!-- Menu -->
+        <div class="menu">
+            <h2>Hospital</h2>
+            <a href="patients/add.php">Add Patient</a>
+            <a href="patients/view.php">View Patients</a>
+            <a href="doctors/add.php">Add Doctor</a>
+            <a href="doctors/view.php">View Doctors</a>
+            <a href="appointments/add.php">Book Appointment</a>
+            <a href="appointments/view.php">View Appointments</a>
+            <a href="appointments/report.php">Appointment Report</a>
+        </div>
 
 
-    <a class="logout" href="logout.php">Logout</a>
+    <div class="content">
+        <h1>Welcome, <?php echo ucwords(strtolower($_SESSION['admin'])); ?></h1>
+        <!-- Count card -->
+        <div class="cards">
+            <div class="card">
+                <h3>Total Patients</h3>
+                <p><?= $patient_count ?></p>
+            </div>
+
+            <div class="card">
+                <h3>Total Doctors</h3>
+                <p><?= $doctor_count ?></p>
+            </div>
+
+            <div class="card">
+                <h3>Total Appointments</h3>
+                <p><?= $appointment_count ?></p>
+            </div>
+        </div>
+    </div>
+    </div>
 </body>
 </html>
