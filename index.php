@@ -6,17 +6,24 @@ $error = "";
 
 if(isset($_POST['login'])){
     // 🔐 Basic security: escape user input to prevent SQL Injection
-    $u = mysqli_real_escape_string($con, $_POST['username']);
-    $p = mysqli_real_escape_string($con, $_POST['password']);
+    $u = $_POST['username'];
+    $p = $_POST['password'];
 
     // 🔐 Admin authentication query
-    $q = "SELECT * FROM admin WHERE username = '$u' AND password = '$p'";
+    $q = "SELECT * FROM admin WHERE username='$u'";
     $res = mysqli_query($con, $q);
 
     if(mysqli_num_rows($res) == 1){
-        $_SESSION['admin'] = $u;
-        header("Location: dashboard.php");
-        exit;
+        $row = mysqli_fetch_assoc($res);
+
+        // 🔐 Verify hashed password
+        if (password_verify($p, $row['password'])) {
+            $_SESSION['admin'] = $row['username'];
+            header("Location: dashboard.php");
+            exit;
+        } else {
+            $error = "Invalid Username or Password";
+        }
     }else {
         $error = "Invalid Username or Password";
     }
