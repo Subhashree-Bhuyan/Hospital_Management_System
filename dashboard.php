@@ -44,6 +44,9 @@ $appointment_count = mysqli_fetch_assoc(
             <a href="appointments/add.php">Book Appointment</a>
             <a href="appointments/view.php">View Appointments</a>
             <a href="appointments/report.php">Appointment Report</a>
+            <a href="billing/add.php">Add Bill</a>
+            <a href="billing/view.php">Billing Report</a>
+
         </div>
 
 
