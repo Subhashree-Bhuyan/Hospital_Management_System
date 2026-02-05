@@ -29,6 +29,7 @@ $q = "SELECT appointments.id,
                 <th>Patient</th>
                 <th>Doctor</th>
                 <th>Date</th>
+                <th>Action</th>
             </tr>
 
             <?php while($row = mysqli_fetch_assoc($res)) { ?>
@@ -36,6 +37,13 @@ $q = "SELECT appointments.id,
                 <td><?= $row['patient_name'] ?></td>
                 <td><?= $row['doctor_name'] ?></td>
                 <td><?= $row['appointment_date'] ?></td>
+                <td>
+                    <a class="delete"
+                        href="delete.php?id=<?= $row['id'] ?>"
+                        onclick="return confirm('Are you sure you want to delete this appointment?');">
+                        Delete
+                    </a>
+                </td>
             </tr>
             <?php } ?>
         </table>
