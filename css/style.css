@@ -181,6 +181,10 @@ nav {
 /* ---------------- page container ---------------- */
 .page {
   padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 /* ---------------- search box ---------------- */
@@ -220,17 +224,17 @@ table tr:hover {
 }
 
 /* --------------- large screen view ------------------ */
-@media (min-width: 1920px){
+@media (min-width: 1920px) {
   .main-container {
-        grid-template-columns: 350px 1fr;
-  }
-  
-  .card {
-        width: 300px;
+    grid-template-columns: 350px 1fr;
   }
 
-  h1, h2{
-    
+  .card {
+    width: 300px;
+  }
+
+  h1,
+  h2 {
   }
 }
 /* --------------- tablet view ------------------ */
