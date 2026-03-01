@@ -34,7 +34,10 @@ $result = mysqli_query($con, $q);
         <a href="add.php" class="other_btn">Add New Patient</a>
         <a href="../dashboard.php" class="back">Back</a>
     </div>
-    <table border='5' cellpadding='10'>
+
+    <div class="table-container">
+    <table>
+        <thead>
         <tr>
             <th>ID</th>
             <th>Name</th>
@@ -44,9 +47,10 @@ $result = mysqli_query($con, $q);
             <th>Disease</th>
             <th>Action</th>
         </tr>
-
+        </thead>
         <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-            <tr>
+        <tbody>   
+        <tr>
                 <td><?php echo $row['patient_id']; ?></td>
                 <td><?php echo $row['name']; ?></td>
                 <td><?php echo $row['age']; ?></td>
@@ -58,8 +62,10 @@ $result = mysqli_query($con, $q);
                     <a class="delete" href="delete.php?id=<?php echo $row['patient_id'] ?>" onclick = "return confirm('Are you sure you want to delete <?php echo $row['name'] ?> record?');">Delete</a>
                 </td>
             </tr>
+        </tbody>
         <?php } ?>
     </table>
+    </div>
     
     </div>
 </body>

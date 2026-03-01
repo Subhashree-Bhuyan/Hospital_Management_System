@@ -34,16 +34,19 @@ $result = mysqli_query($con, $q);
             <a href="../dashboard.php" class="back">Back</a>
         </div>
 
-        <table border='5' cellpadding = '10'>
-        <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Department</th>
-        <th>Available Days</th>
-        <th>Acion</th>
-        </tr>
-
+        <div class="table-container">
+        <table>
+        <thead>
+            <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Available Days</th>
+            <th>Acion</th>
+            </tr>
+        </thead>
         <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+        <tbody>
         <tr>
             <td><?php echo $row['doctor_id']; ?></td>
             <td><?php echo $row['name']; ?></td>
@@ -54,8 +57,10 @@ $result = mysqli_query($con, $q);
                 <a class="delete" href="delete.php?id=<?php echo $row['doctor_id']; ?>" onclick="return confirm('Are you sure you want to delete <?php echo $row['name'] ?> record?'">Delete</a>
             </td>
         </tr>
+        </tbody>
         <?php } ?>
         </table>
+</div>
 
         
     </div>
