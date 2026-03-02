@@ -28,9 +28,11 @@ if(isset($_POST['save'])){
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <div class="page">
+    <div class="title">
         <h2>Book Appointment</h2>
-
+    </div>
+    <div class="add-list">
+        
         <form method='post'>
             <select name="patient_id" required>
                 <option value="" disabled selected>Select Patient</option>

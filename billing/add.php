@@ -26,29 +26,34 @@ if (isset($_POST['add'])) {
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-<div class="page">
-    <h2>Add Billing Entry</h2>
+    <div class="title">
+        <h2>Add Billing Entry</h2>
+    </div>
+    <div class="add-list">
+        <form method="post">
+            <select name="patient_id" required>
+                <option value="" disabled selected>Select Patient</option>
+                <?php while ($p = mysqli_fetch_assoc($patients)) { ?>
+                    <option value="<?= $p['patient_id'] ?>">
+                        <?= $p['name'] ?>
+                    </option>
+                <?php } ?>
+            </select>
 
-    <form method="post">
-        <select name="patient_id" required>
-            <option value="" disabled selected>Select Patient</option>
-            <?php while ($p = mysqli_fetch_assoc($patients)) { ?>
-                <option value="<?= $p['patient_id'] ?>">
-                    <?= $p['name'] ?>
-                </option>
-            <?php } ?>
-        </select>
+            <input type="number" name="amount" placeholder="Amount" required>
 
-        <input type="number" name="amount" placeholder="Amount" required>
+            <select name="payment_status" required>
+                <option value="Paid">Paid</option>
+                <option value="Pending">Pending</option>
+            </select>
 
-        <select name="payment_status" required>
-            <option value="Paid">Paid</option>
-            <option value="Pending">Pending</option>
-        </select>
+            <button name="add">Save Bill</button>
+        </form>
 
-        <button name="add">Save Bill</button>
-    </form>
-
-    <div class="btns">
-        <a href="view.php" class="other_btn">View Billing</a>
-        <a href="../dashboard.php" class="back">Back</a>
+        <div class="btns">
+            <a href="view.php" class="other_btn">View Billing</a>
+            <a href="../dashboard.php" class="back">Back</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -21,8 +21,11 @@ $q = "SELECT appointments.id,
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <div class="page">
+    <div class="title">
         <h2>Appointments</h2>
+    </div>
+    <div class="page">
+        
 
         <table border="5" cellpadding="10">
             <tr>

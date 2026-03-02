@@ -22,9 +22,10 @@ ORDER BY appointments.appointment_date
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <div class="page">
+    <div class="title">
         <h2>Appointment Report</h2>
-
+    </div>
+    <div class="add-list">
         <table border="5">
             <tr>
                 <th>Patient</th>

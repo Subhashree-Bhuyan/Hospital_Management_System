@@ -21,9 +21,10 @@ if(isset($_POST['add'])){
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <div class="page">
+    <div class="title">
         <h2>Add Doctor</h2>
-
+    </div>
+    <div class="add-list">
         <form method="post">
             <input type="text" name="name" placeholder="Doctor name" required>
             <input type="text" name="department" placeholder="Department" required>

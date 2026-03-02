@@ -50,26 +50,26 @@ $appointment_count = mysqli_fetch_assoc(
         </div>
 
 
-    <div class="content">
-        <h1>Welcome, <?php echo ucwords(strtolower($_SESSION['admin'])); ?></h1>
-        <!-- Count card -->
-        <div class="cards">
-            <div class="card">
-                <h3>Total Patients</h3>
-                <p><?= $patient_count ?></p>
-            </div>
+        <div class="content">
+            <h1>Welcome, <?php echo ucwords(strtolower($_SESSION['admin'])); ?></h1>
+            <!-- Count card -->
+            <div class="cards">
+                <div class="card">
+                    <h3>Total Patients</h3>
+                    <p><?= $patient_count ?></p>
+                </div>
 
-            <div class="card">
-                <h3>Total Doctors</h3>
-                <p><?= $doctor_count ?></p>
-            </div>
+                <div class="card">
+                    <h3>Total Doctors</h3>
+                    <p><?= $doctor_count ?></p>
+                </div>
 
-            <div class="card">
-                <h3>Total Appointments</h3>
-                <p><?= $appointment_count ?></p>
+                <div class="card">
+                    <h3>Total Appointments</h3>
+                    <p><?= $appointment_count ?></p>
+                </div>
             </div>
         </div>
-    </div>
     </div>
 </body>
 </html>

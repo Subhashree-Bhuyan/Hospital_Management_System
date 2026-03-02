@@ -21,18 +21,22 @@ $result = mysqli_query($con, $q);
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+    <div class="title">
+        <h2>Patient List</h2>
+    </div>
+
     <div class="page">
-    <h2>Patient List</h2>
+    <div class="page-sidebar">
+        <form class="search_box" method="get" >
+            <input type="text" name="search" placeholder="Search patient by name">
+            <button type="submit">Search</button>
+        </form>
 
-    <form class="search_box" method="get" >
-        <input type="text" name="search" placeholder="Search patient by name">
-        <button type="submit">Search</button>
-    </form>
 
-
-    <div class="btns">
-        <a href="add.php" class="other_btn">Add New Patient</a>
-        <a href="../dashboard.php" class="back">Back</a>
+        <div class="btns">
+            <a href="add.php" class="other_btn">Add New Patient</a>
+            <a href="../dashboard.php" class="back">Back</a>
+        </div>
     </div>
 
     <div class="table-container">

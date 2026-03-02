@@ -24,9 +24,10 @@ $res = mysqli_query($con, $q);
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <div class="page">
+    <div class="title">
         <h2>Billing Report</h2>
-
+    </div>
+    <div class="add-list">
         <table border="5" cellpadding="10">
             <tr>
                 <th>Bill ID</th>
